@@ -17,7 +17,7 @@ const App = () => {
 };
 
 describe('it', () => {
-  it('renders without crashing', async () => {
+  it('toggles value', async () => {
     const { getByText } = render(<App />);
     const yesNode = await getByText('yes!');
     expect(yesNode).toBeInTheDocument();

@@ -33,6 +33,16 @@
   },
   "name": "use-togg",
   "author": "kharioki",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kharioki/use-togg"
+  },
+  "homepage": "https://github.com/kharioki/use-togg",
+  "keywords": [
+    "react",
+    "hook",
+    "toggle-value"
+  ],
   "module": "dist/use-togg.esm.js",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.3",
