@@ -1,20 +1,25 @@
 import React from 'react';
-import { render, waitForElement } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import useToggle from '../src';
 
 const App = () => {
   const [value, toggle] = useToggle();
 
+  React.useEffect(() => {
+    toggle();
+  }, []);
+
   if (value) {
-    return <div>yes!!</div>;
+    return <div>yes!</div>;
   }
   return null;
 };
+
 describe('it', () => {
   it('renders without crashing', async () => {
     const { getByText } = render(<App />);
-    const yesNode = await waitForElement(() => getByText('yes!!'));
-    expect(yesNode).toBeInTheDocument;
+    const yesNode = await getByText('yes!');
+    expect(yesNode).toBeInTheDocument();
   });
 });
